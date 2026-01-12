@@ -2,13 +2,28 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NestList</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
-    <h1>NestList</h1>
-    <p>買い物メモアプリ</p>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+<body>
+    <header class="header">
+        <h1>NestList</h1>
+        <p class="subtitle">買い忘れを防ぐ、買い物メモアプリ</p>
+    </header>
+
+    <main class=""container>
+        <section class="add-area">
+            <input type="text" placeholder="商品名を入力（例：牛乳）"/>
+            <button>追加</button>
+        </section>
+
+        <section class="list-area">
+            <p class="empty">商品がありません</p>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>

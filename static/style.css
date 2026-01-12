@@ -1,1 +1,72 @@
-/* 後でデザインを追加 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+.header {
+    background-color: #4a6cf7;
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.add-area {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.add-area input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.add-area button {
+    padding: 10px 16px;
+    background-color: #4a6cf7;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.list-area {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 100px;
+}
+
+.empty {
+    text-align: center;
+    color: #aaa;
+}
+
+/* スマホ対応 */
+@media (max-width: 480px) {
+    .add-area {
+    flex-direction: column;
+}
+
+    .add-area button {
+    width: 100%;
+}
+}
