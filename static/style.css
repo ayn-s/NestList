@@ -67,6 +67,11 @@ main {
     color: #4a6cf7;
     border-bottom: 1px solid #ddd;
     padding-bottom: 4px;
+    cursor: grab;
+}
+
+.category-title.dragging {
+    opacity: 0.5;
 }
 
 /* リスト */
