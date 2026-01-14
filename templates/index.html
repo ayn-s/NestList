@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NestList</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <header class="header">
+
+    <header>
         <h1>NestList</h1>
-        <p class="subtitle">買い忘れを防ぐ、買い物メモアプリ</p>
+        <p class="subtitle">カテゴリで整理できる買い物メモ</p>
     </header>
 
-    <main class="container"
+    <main>
         <section class="add-area">
-            <input id="itemInput" type="text" placeholder="商品名を入力(例：牛乳)" />
+            <input
+                id="itemInput"
+                type="text"
+                placeholder="商品名（例：牛乳）"
+            />
+
+            <select id="categorySelect">
+                <option value="" disabled selected>カテゴリを選択</option>
+                <option value="生鮮食品">生鮮食品</option>
+                <option value="調味料・レトルト食品">調味料・レトルト食品</option>
+                <option value="乳製品">乳製品</option>
+                <option value="冷凍食品">冷凍食品</option>
+                <option value="飲料">飲料</option>
+                <option value="__new">＋ 新しいカテゴリ</option>
+            </select>
+
+            <input
+                id="newCategoryInput"
+                type="text"
+                placeholder="新しいカテゴリ名"
+                style="display: none;"
+            />
+
             <button id="addBtn">追加</button>
         </section>
 
-        <section class="list-area">
-            <ul id="itemList"></ul>
-            <p id="emptyMessage" class="empty">まだ商品がありません</p>
-        </section>
+        <p id="emptyMessage" class="empty-message">
+            まだ商品が追加されていません
+        </p>
+
+        <ul id="itemList"></ul>
     </main>
 
-    <script src="/static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
