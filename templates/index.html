@@ -4,51 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NestList</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <header>
-        <h1>NestList</h1>
-        <p class="subtitle">カテゴリで整理できる買い物メモ</p>
-    </header>
+<header>
+    <h1>NestList</h1>
+    <p class="subtitle">カテゴリで整理できる買い物メモ</p>
+</header>
 
-    <main>
-        <section class="add-area">
-            <input
-                id="itemInput"
-                type="text"
-                placeholder="商品名（例：牛乳）"
-            />
+<main>
+    <!-- タブ -->
+    <div class="tabs">
+        <button id="tabActive" class="tab active">未購入</button>
+        <button id="tabDone" class="tab">購入済み</button>
+    </div>
 
-            <select id="categorySelect">
-                <option value="" disabled selected>カテゴリを選択</option>
-                <option value="生鮮食品">生鮮食品</option>
-                <option value="調味料・レトルト食品">調味料・レトルト食品</option>
-                <option value="乳製品">乳製品</option>
-                <option value="冷凍食品">冷凍食品</option>
-                <option value="飲料">飲料</option>
-                <option value="__new">＋ 新しいカテゴリ</option>
-            </select>
+    <!-- 追加エリア -->
+    <section class="add-area">
+        <input id="itemInput" type="text" placeholder="商品名" />
 
-            <input
-                id="newCategoryInput"
-                type="text"
-                placeholder="新しいカテゴリ名"
-                style="display: none;"
-            />
+        <select id="categorySelect">
+            <option value="" disabled selected>カテゴリを選択</option>
+            <option value="生鮮食品">生鮮食品</option>
+            <option value="調味料・レトルト食品">調味料・レトルト食品</option>
+            <option value="乳製品">乳製品</option>
+            <option value="冷凍食品">冷凍食品</option>
+            <option value="飲料">飲料</option>
+            <option value="__new">＋ 新しいカテゴリ</option>
+        </select>
 
-            <button id="addBtn">追加</button>
-        </section>
+        <input
+            id="newCategoryInput"
+            type="text"
+            placeholder="新しいカテゴリ名"
+            style="display:none"
+        />
 
-        <p id="emptyMessage" class="empty-message">
-            まだ商品が追加されていません
-        </p>
+        <button id="addBtn">追加</button>
+    </section>
 
-        <ul id="itemList"></ul>
-    </main>
+    <p id="emptyMessage" class="empty-message">表示する項目がありません</p>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <ul id="itemList"></ul>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

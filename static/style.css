@@ -1,16 +1,13 @@
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background-color: #f5f6fa;
-    color: #333;
+    background: #f5f6fa;
 }
 
 header {
-    background-color: #4a6cf7;
+    background: #4a6cf7;
     color: white;
     padding: 16px;
     text-align: center;
@@ -18,20 +15,38 @@ header {
 
 .subtitle {
     font-size: 0.85rem;
-    opacity: 0.9;
 }
 
 main {
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto;
     padding: 16px;
+}
+
+/* タブ */
+.tabs {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #4a6cf7;
+    color: white;
 }
 
 .add-area {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .add-area input,
@@ -42,31 +57,15 @@ main {
 }
 
 .add-area button {
-    background-color: #4a6cf7;
+    background: #4a6cf7;
     color: white;
     border: none;
-    border-radius: 4px;
 }
 
-.add-area button:hover {
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-/* 空メッセージ */
-.empty-message {
-    text-align: center;
-    color: #888;
-    margin-top: 24px;
-}
-
-/* カテゴリ見出し */
+/* カテゴリ */
 .category-title {
-    margin: 20px 0 8px;
-    font-size: 1rem;
+    margin: 16px 0 6px;
     color: #4a6cf7;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 4px;
     cursor: grab;
 }
 
@@ -78,38 +77,32 @@ main {
 #itemList {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
+    background: white;
     padding: 10px;
     margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
     border-radius: 4px;
 }
 
-/* 完了状態 */
 .item.done span {
-    color: #aaa;
     text-decoration: line-through;
+    color: gray;
 }
 
-/* 削除ボタン */
 .item button {
-    background-color: #ff5c5c;
-    border: none;
+    background: #ff5c5c;
     color: white;
-    padding: 6px 10px;
+    border: none;
+    padding: 6px;
     border-radius: 4px;
-    font-size: 0.8rem;
 }
 
-/* スマホ対応 */
-@media (max-width: 480px) {
-    main {
-        padding: 12px;
-    }
+/* 空表示 */
+.empty-message {
+    text-align: center;
+    color: #888;
 }
